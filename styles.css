@@ -36,3 +36,34 @@ body {
   transform: translate(-50%, -50%) scale(1.8);
   background-color: rgba(255, 51, 68, 0.15);
 }
+
+/* Hero Context Colors */
+.hero-section {
+  padding: 100px 20px;
+  text-align: center;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.typing-text {
+  font-size: 2rem;
+  color: #f4f6fa; /* Crisp off-white */
+  font-weight: 500;
+}
+
+/* The word being typed out */
+.dynamic-word {
+  color: #ff3344; /* High-energy electric red */
+  font-weight: 700;
+}
+
+/* Terminal-style blinking cursor */
+.cursor-blink {
+  color: #ff3344;
+  font-weight: 500;
+  animation: blink 0.7s infinite;
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
