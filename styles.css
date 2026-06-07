@@ -39,9 +39,21 @@ body {
 
 /* Hero Context Colors */
 .hero-section {
-  padding: 100px 20px;
+  min-height: 70vh; /* Takes up 70% of the visible viewport height */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   text-align: center;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  padding: 40px 20px;
+}
+
+/* Fix: Give the main greeting header high contrast styling */
+.hero-container h1 {
+  color: #ffffff;
+  font-family: 'Segoe UI', sans-serif;
+  font-size: 3rem;
+  margin-bottom: 10px;
 }
 
 .typing-text {
@@ -93,38 +105,37 @@ body {
 }
 
 /* Card Styling & Foundations */
+/* Fix: Give cards physical separation and distinct charcoal backgrounds */
 .project-card {
-  background: #111827; /* Slightly lighter charcoal contrast background */
-  border: 1px solid #1f2937;
+  background: #161e2e; /* Lightened contrast color so cards are visible */
+  border: 1px solid #232e42; /* Clean border line */
   border-radius: 12px;
-  padding: 25px;
+  padding: 30px;
+  margin-bottom: 20px; /* Prevents cards from running into each other vertical-wise */
   position: relative;
-  transform-style: preserve-3d; /* Tells child elements to exist in 3D space */
+  transform-style: preserve-3d;
   transition: transform 0.15s ease-out, box-shadow 0.15s ease-out, border-color 0.2s ease;
 }
 
-.project-tag {
-  color: #ff3344;
-  font-size: 0.8rem;
-  text-transform: uppercase;
-  font-weight: 700;
-  letter-spacing: 1px;
-}
-
+/* Fix: Style the text inside the card to ensure high contrast */
 .project-card h3 {
-  color: #f4f6fa;
+  color: #ffffff; /* Pure white text for headers */
+  font-family: 'Segoe UI', sans-serif;
   font-size: 1.6rem;
-  margin: 10px 0;
+  margin: 12px 0 8px 0;
 }
 
 .project-card p {
-  color: #9ca3af; /* Soft gray for high scannability read */
+  color: #9ca3af; /* Clean, scannable gray description text */
+  font-family: 'Segoe UI', sans-serif;
   line-height: 1.6;
+  margin-bottom: 20px;
 }
 
-/* Tech Pills Wrapper */
+/* Fix: Wrap the tech pills gracefully */
 .tech-stack {
   display: flex;
+  flex-wrap: wrap; /* Forces items to drop down nicely if out of room */
   gap: 10px;
   margin-top: 20px;
 }
