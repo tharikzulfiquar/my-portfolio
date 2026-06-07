@@ -67,3 +67,80 @@ body {
   0%, 100% { opacity: 1; }
   50% { opacity: 0; }
 }
+
+/* Projects Section Layout */
+.projects-section {
+  padding: 60px 40px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.section-title {
+  color: #f4f6fa;
+  font-family: 'Segoe UI', sans-serif;
+  font-size: 2.2rem;
+  margin-bottom: 40px;
+  border-left: 4px solid #ff3344;
+  padding-left: 15px;
+}
+
+/* Responsive Grid System */
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+  perspective: 1000px; /* Essential for creating a 3D environment for cards */
+}
+
+/* Card Styling & Foundations */
+.project-card {
+  background: #111827; /* Slightly lighter charcoal contrast background */
+  border: 1px solid #1f2937;
+  border-radius: 12px;
+  padding: 25px;
+  position: relative;
+  transform-style: preserve-3d; /* Tells child elements to exist in 3D space */
+  transition: transform 0.15s ease-out, box-shadow 0.15s ease-out, border-color 0.2s ease;
+}
+
+.project-tag {
+  color: #ff3344;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+.project-card h3 {
+  color: #f4f6fa;
+  font-size: 1.6rem;
+  margin: 10px 0;
+}
+
+.project-card p {
+  color: #9ca3af; /* Soft gray for high scannability read */
+  line-height: 1.6;
+}
+
+/* Tech Pills Wrapper */
+.tech-stack {
+  display: flex;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.tech-stack span {
+  background: rgba(255, 51, 68, 0.1);
+  color: #ff3344;
+  border: 1px solid rgba(255, 51, 68, 0.2);
+  padding: 5px 12px;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+/* Dynamic Hover Effects */
+.project-card:hover {
+  border-color: #ff3344;
+  box-shadow: 0px 10px 30px rgba(255, 51, 68, 0.15);
+}

@@ -21,7 +21,7 @@ document.querySelectorAll('a, button, .project-card').forEach(link => {
 });
 
 // Array of words you want to rotate through
-const words = ["Java.", "C#.", "PHP.", "SQL.", "C Language."];
+const words = ["Java.", "C#.", "C++.", "SQL.", "C Language."];
 
 let wordIndex = 0;
 let charIndex = 0;
@@ -68,4 +68,33 @@ function typeEffect() {
 // Kick off the loop once the DOM is fully loaded
 document.addEventListener("DOMContentLoaded", () => {
   typeEffect();
+});
+
+const cards = document.querySelectorAll('.project-card');
+
+cards.forEach(card => {
+  card.addEventListener('mousemove', (e) => {
+    // Get total dimensions and screen position of the current card
+    const rect = card.getBoundingClientRect();
+    
+    // Calculate mouse position relative to inside the card boundary (0 to cardWidth/Height)
+    const x = e.clientX - rect.left;
+    const y = e.clientY - rect.top;
+    
+    // Find the center point of the card
+    const centerX = rect.width / 2;
+    const centerY = rect.height / 2;
+    
+    // Calculate rotation angle degrees based on distance from center (max 15 degrees tilt)
+    const rotateX = ((centerY - y) / centerY) * 15;
+    const rotateY = ((x - centerX) / centerX) * 15;
+    
+    // Inject the physical 3D transforms inline
+    card.style.transform = `rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateY(-5px)`;
+  });
+  
+  // Snap the card back smoothly to its flat position when the mouse leaves
+  card.addEventListener('mouseleave', () => {
+    card.style.transform = `rotateX(0deg) rotateY(0deg)`;
+  });
 });
