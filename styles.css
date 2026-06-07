@@ -1,0 +1,38 @@
+/* Hides default mouse pointer */
+body {
+  cursor: none;
+  background-color: #0b0f19; /* Deep, sleek navy background */
+  overflow-x: hidden;
+  margin: 0;
+}
+
+/*The outer neon ring*/
+.custom-cursor {
+  width: 26px;
+  height: 26px;
+  border: 2px solid #ff3344; /*electric red */
+  border-radius: 50%;
+  position: fixed;
+  transform: translate(-50%, -50%);
+  pointer-events: none; /*stops blocking clicks */
+  transition: transform 0.1s ease-out, background-color 0.2s ease;
+  z-index: 9999;
+}
+
+/*solid center dot*/
+.custom-cursor-dot {
+  width: 6px;
+  height: 6px;
+  background-color: #f4f6fa; /*off-white*/
+  border-radius: 50%;
+  position: fixed;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  z-index: 10000;
+}
+
+/*hovering over, ring pop */
+.custom-cursor.hovering {
+  transform: translate(-50%, -50%) scale(1.8);
+  background-color: rgba(255, 51, 68, 0.15);
+}
